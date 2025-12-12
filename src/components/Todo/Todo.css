@@ -464,3 +464,10 @@ input::placeholder {
 .confirm-btn:hover {
   background: rgba(239, 68, 68, 1);
 }
+
+.logo {
+  width: 40px;
+  height: auto;
+  align-items: center;
+  margin: 0%;
+}
