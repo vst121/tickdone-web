@@ -67,6 +67,14 @@ button {
   box-shadow: var(--shadow);
 }
 
+input[type="datetime-local"] {
+  color: white;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* make icon white */
+}
+
 button:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-hover);
