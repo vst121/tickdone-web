@@ -16,8 +16,11 @@ function Todo() {
   const [filter, setFilter] = useState<"all" | "active" | "completed">("all");
   const [deleteId, setDeleteId] = useState<number | null>(null);
 
+  const API_URL: string = import.meta.env.VITE_API_URL;
+  console.log("API_URL:", API_URL);
+
   useEffect(() => {
-    fetch("/todos")
+    fetch(`${API_URL}/todos`)
       .then((res) => res.json())
       .then((data) => {
         setTodos(data);
@@ -43,7 +46,7 @@ function Todo() {
     };
 
     try {
-      const response = await fetch("/todos", {
+      const response = await fetch(`${API_URL}/todos`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -75,7 +78,7 @@ function Todo() {
     setError(null);
 
     try {
-      const response = await fetch(`/todos/${deleteId}`, {
+      const response = await fetch(`${API_URL}/todos/${deleteId}`, {
         method: "DELETE",
       });
       if (!response.ok) {
@@ -103,7 +106,7 @@ function Todo() {
     const updatedDone = !todo.done;
 
     try {
-      const response = await fetch(`/todos/${id}`, {
+      const response = await fetch(`${API_URL}/todos/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

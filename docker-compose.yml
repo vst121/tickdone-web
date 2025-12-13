@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: .              # root folder
+      dockerfile: ../../DotNetProjects10/TickDone/TickDone.API/Dockerfile
+    container_name: tickdone-api
+    ports:
+      - "8080:8080"
+
+  frontend:
+    build:
+      context: .              # root folder
+      dockerfile: Dockerfile
+    container_name: tickdone-web
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
+    environment:
+      - VITE_API_URL=http://tickdone-api:8080
+
+volumes:
+  tickdone-data:
