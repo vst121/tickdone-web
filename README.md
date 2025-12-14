@@ -126,6 +126,12 @@ tickdone-web/
 6. Push to the branch
 7. Open a Pull Request
 
+## Screenshot
+
+![Main Page](docs/Screenshot.png)
+
+This project is private and not licensed for public use.
+
 ## License
 
 This project is private and not licensed for public use.
