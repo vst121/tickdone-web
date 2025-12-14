@@ -128,7 +128,7 @@ tickdone-web/
 
 ## Screenshot
 
-![Main Page](docs/Screenshot.png)
+![Main Page](docs/Screenshot.jpg)
 
 This project is private and not licensed for public use.
 
