@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 interface Todo {
   id: number;
@@ -133,18 +133,14 @@ function Todo() {
     return todo.deadline && new Date(todo.deadline) < new Date() && !todo.done;
   }, []);
 
-  const filteredTodos = useMemo(() => {
-    return todos.filter((todo) => {
-      if (filter === "all") return true;
-      if (filter === "active") return !todo.done && !isOverdue(todo);
-      if (filter === "completed") return todo.done;
-      return true;
-    });
-  }, [todos, filter, isOverdue]);
+  const filteredTodos = todos.filter((todo) => {
+    if (filter === "all") return true;
+    if (filter === "active") return !todo.done && !isOverdue(todo);
+    if (filter === "completed") return todo.done;
+    return true;
+  });
 
-  const itemsLeft = useMemo(() => {
-    return todos.filter((todo) => !todo.done && !isOverdue(todo)).length;
-  }, [todos, isOverdue]);
+  const itemsLeft = filteredTodos.length;
 
   if (loading) {
     return (
@@ -179,7 +175,7 @@ function Todo() {
 
         {filteredTodos.length === 0 ? (
           <div className="empty-state">
-            <div>No todos yet!</div>
+            <div>No todos.</div>
           </div>
         ) : (
           <div className="todo-list">
