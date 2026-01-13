@@ -1,4 +1,4 @@
-# TickDone Web
+# TickDone React
 
 A modern, responsive Todo web application built with React, TypeScript, and Vite. Manage your todos efficiently with deadlines, status tracking, and filtering capabilities.
 
@@ -33,7 +33,7 @@ A modern, responsive Todo web application built with React, TypeScript, and Vite
 
    ```bash
    git clone <repository-url>
-   cd tickdone-web
+   cd tickdone-react
    ```
 
 2. Install dependencies:
@@ -93,7 +93,7 @@ interface Todo {
 ## Project Structure
 
 ```
-tickdone-web/
+tickdone-react/
 ├── public/
 │   └── favicon.svg
 ├── src/
